@@ -1,0 +1,10 @@
+{
+  "name": "portion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Photo-to-plate nutrition coach with Indian portion units, glycemic load and a supplement planner.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0"
+  }
+}
