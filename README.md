@@ -26,6 +26,15 @@ Built for the Mosaic Wellness builder round.
   body-weight-scaled protein and creatine plan for the day you are actually
   training, and see what the shake did to the rest of your plate.
 
+## Live
+
+**https://gourabsaha1407-ctrl.github.io/portion/** — open to anyone, no sign-in.
+
+GitHub Pages serves a static site, so `/api/analyze` does not exist there and
+photo reading is off; the page detects that on load and switches to the
+by-hand paths. Everything else works. Deploy to Vercel (below) with an API key
+to turn the camera on.
+
 ## Deploying
 
 The app runs with or without an API key. Without one, everything works except
@@ -80,9 +89,13 @@ git push -u origin main
 
 ```
 public/index.html   The entire app — no build step, no framework, no bundler.
+docs/index.html     Byte-identical copy; GitHub Pages serves from /docs.
 api/analyze.js      The only server code. Holds the key, forwards one prompt
                     and one image to Claude, returns the raw text.
 ```
+
+`public/` and `docs/` hold the same file. Edit `public/index.html`, then
+`cp public/index.html docs/index.html` before committing.
 
 The page picks its backend at load:
 
